@@ -1,11 +1,5 @@
 # yahya010.github.io
 
-# LSTM English to French Machine Translation Project
-
-This GitHub repository contains an English to French machine translation project using LSTM (Long Short-Term Memory) networks. The project also explores various methods and techniques for improving translation quality and efficiency. Additionally, it includes a module for building cognitive maps from large unstructured datasets.
-
-## Table of Contents
-
 - [Introduction](#introduction)
 - [Installation](#installation)
 - [Usage](#usage)
@@ -13,14 +7,19 @@ This GitHub repository contains an English to French machine translation project
 - [Cognitive Mapping](#cognitive-mapping)
 - [Contributing](#contributing)
 - [License](#license)
+- 
+# English to French Machine Translation Project
 
-## Introduction
+This GitHub repository contains an English to French machine translation project. The project explores various methods and techniques from simple RNN models, Bidirectional RNNs to Encoder-Decoder transformer translation.
+## Table of Contents
 
-The goal of this project is to develop a robust and accurate English to French machine translation system using LSTM neural networks. LSTM networks are a type of recurrent neural network (RNN) that are particularly effective in handling sequence data. By training the model on a large corpus of bilingual text data, we aim to achieve high-quality translation results.
 
-## Installation
+## Building Cognitive Maps of Long Text Documents
 
-To use this project, follow these steps:
+An investigation into the challenge of interpreting high-dimensional semantic spaces derived from text corpora using deep learning-based semantic embedding models. Recognizing the potential of clustering data in these spaces to create a more comprehensible, lower-dimensional cognitive map, we focused on the issue of semantic noise in real-world document corpora.
 
-1. Clone the repository:
+## LSTM-Intro
+
+This repository is still being developed to be a comprehensive tutorial for LSTM networks. ALl references are also yet to be added.
+
 
