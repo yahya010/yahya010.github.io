@@ -3,7 +3,7 @@ title: "Natural Language Processing"
 collection: teaching
 type: "Masters course"
 venue: "ETH Zurich"
-date: 2024
+date: 2024-05-20
 location: "Zurich, Switzerland"
 ---
 
