@@ -8,9 +8,9 @@
 
 # Basic Site Settings
 locale                   : "en-US"
-title                    : "Your Name / Site Title"
+title                    : "Yahya Emara"
 title_separator          : "-"
-name                     : &name "Your Name"
+name                     : &name "Yahya Emara"
 description              : &description "personal description"
 url                      : https://academicpages.github.io # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
@@ -22,22 +22,21 @@ repository               : "academicpages/academicpages.github.io"
 author:
   # Biographic information
   avatar           : "profile.png"
-  name             : "Your Sidebar Name"
+  name             : "Yahya Emara"
   pronouns         : # example: "she/her"  
-  bio              : "Short biography for the left-hand sidebar"
+  bio              : "MsC at ETH Zürich"
   location         : "Earth"
-  employer         : "Red Brick University"
+  employer         : "ETH Zürich"
   uri              : # URL
-  email            : "none@example.org" 
+  email            : "yemara@ethz.ch" 
 
   # Academic websites
   arxiv            : # URL - Update with the correct link to your profile
-  googlescholar    : "https://scholar.google.com/citations?user=PS_CX0AAAAAJ"
-  impactstory      : # URL
+  googlescholar    : "https://scholar.google.com/citations?user=Ikxnp9MAAAAJ&hl=en"
+  Twitter          : "https://x.com/yemara22"
   orcid            : "http://orcid.org/yourorcidurl"
-  semantic         : # URL
-  pubmed           : "https://www.ncbi.nlm.nih.gov/pubmed/?term=john+snow"
-  researchgate     : # URL
+  LinkedIn         : "https://www.linkedin.com/in/yahya-emara-91469a171/"
+  GitHub           : "https://github.com/yahya010"
 
   # Repositories and software development
   bitbucket        : # Username - Update with your username on the site
