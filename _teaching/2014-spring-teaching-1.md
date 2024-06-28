@@ -1,14 +1,13 @@
 ---
-title: "Teaching experience 1"
+title: "Natural Language Processing"
 collection: teaching
-type: "Undergraduate course"
-permalink: /teaching/2014-spring-teaching-1
-venue: "University 1, Department"
-date: 2014-01-01
-location: "City, Country"
+type: "Masters course"
+venue: "ETH Zurich"
+date: 2024
+location: "Zurich, Switzerland"
 ---
 
-This is a description of a teaching experience. You can use markdown like any other post.
+Teaching Assistant for Natural Language Processing Class; Taught by Prof. Ryan Cotterell
 
 Heading 1
 ======
