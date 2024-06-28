@@ -33,8 +33,7 @@ author:
   # Academic websites
   arxiv            : # URL - Update with the correct link to your profile
   googlescholar    : "https://scholar.google.com/citations?user=Ikxnp9MAAAAJ&hl=en"
-  Twitter          : "https://x.com/yemara22"
-  orcid            : "http://orcid.org/yourorcidurl"
+  Twitter/X        : "https://x.com/yemara22"
   LinkedIn         : "https://www.linkedin.com/in/yahya-emara-91469a171/"
   GitHub           : "https://github.com/yahya010"
 
@@ -47,7 +46,6 @@ author:
   stackoverflow    : # User number or user number and name (i.e., use "1" or "1/jeff-atwood")    
 
   # Social media
-  bluesky          : "bsky.app" # Replace this with you Bluesky username
   facebook         : # Username
   flickr           : # Username
   foursquare       : # Username
