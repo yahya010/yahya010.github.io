@@ -11,36 +11,31 @@ redirect_from:
 
 Education
 ======
-* Ph.D in Version Control Theory, GitHub University, 2018 (expected)
-* M.S. in Jekyll, GitHub University, 2014
-* B.S. in GitHub, GitHub University, 2012
+* M.S. in CS, ETH Zurich, 2025 (expected)
+* B.S. in CS, University of Cincinnati, 2023 - Graduated with Honours
 
 Work experience
 ======
-* Spring 2024: Academic Pages Collaborator
-  * Github University
-  * Duties includes: Updates and improvements to template
-  * Supervisor: The Users
+* Summer 2024: Teaching Assistant
+  * ETH Zurich
+  * Supervisor: Professor Ryan Cotterell
+  * Zurich, Switzerland
 
-* Fall 2015: Research Assistant
-  * Github University
-  * Duties included: Merging pull requests
-  * Supervisor: Professor Hub
+* Spring 2024: Research Assistant
+  * ETH Zurich
+  * Supervisor: Professor Ryan Cotterell
+  * Zurich, Switzerland
 
-* Summer 2015: Research Assistant
-  * Github University
-  * Duties included: Tagging issues
-  * Supervisor: Professor Git
+* Fall 2022: Research Assistant
+  * University of Cincinnati
+  * Supervisor: Professor Ali Minai
+  * Cincinnati, OH
+    
+* Spring 2022: Software Engineering Intern (2020-2022)
+  * Infinera
+  * SDK Team
+  * Sunnyvale, CA
   
-Skills
-======
-* Skill 1
-* Skill 2
-  * Sub-skill 2.1
-  * Sub-skill 2.2
-  * Sub-skill 2.3
-* Skill 3
-
 Publications
 ======
   <ul>{% for post in site.publications reversed %}
@@ -61,4 +56,7 @@ Teaching
   
 Service and leadership
 ======
-* Currently signed in to 43 different slack teams
+* ICGC (Cincinnati, Ohio) - Teaching Arabic to students aged 8-10
+* Bearcat Ventures - First Student led VC in Ohio
+* Hyperloop UC
+
