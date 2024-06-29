@@ -4,6 +4,6 @@ excerpt: "In depth article regarding the development of NLP and Linguistics sinc
 collection: portfolio
 ---
 
-[Read the full article](https://drive.google.com/file/d/1la4WOJmUf_yGJL1SXqiE95BFRhDCWheg/view?usp=share_link)
+[Read the full article](https://drive.google.com/file/d/17cP2kWgbB08Kkzz5Z7aFJmAJdmLmjO9W/view?usp=share_link)
 
 This is an in-depth article regarding the development of NLP and Linguistics since Chomsky's 1956 Three Models for Language, how it has affected and progressed the field as well as critiques of how it stands with Modern NLP.
