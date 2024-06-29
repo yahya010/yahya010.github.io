@@ -16,10 +16,6 @@ Education
 
 Work experience
 ======
-* Summer 2024: Teaching Assistant
-  * ETH Zurich
-  * Supervisor: Professor Ryan Cotterell
-  * Zurich, Switzerland
 
 * Spring 2024: Research Assistant
   * ETH Zurich
