@@ -1,7 +1,9 @@
 ---
-title: "Portfolio item number 1"
-excerpt: "Short description of portfolio item number 1<br/><img src='/images/500x300.png'>"
+title: "From Three Models to Modern NLP: The Evolution of Chomsky's Theories in Language Modeling and its Philosophical Implication"
+excerpt: "In depth article regarding the development of NLP and Linguistics since Chomsky's 1956 Three Models for Language, how it has affected and progressed the field as well as critiques of how it stands with Modern NLP"
 collection: portfolio
 ---
 
-This is an item in your portfolio. It can be have images or nice text. If you name the file .md, it will be parsed as markdown. If you name the file .html, it will be parsed as HTML. 
+[Read the full article](https://drive.google.com/file/d/1la4WOJmUf_yGJL1SXqiE95BFRhDCWheg/view?usp=share_link)
+
+This is an in-depth article regarding the development of NLP and Linguistics since Chomsky's 1956 Three Models for Language, how it has affected and progressed the field as well as critiques of how it stands with Modern NLP.
