@@ -52,6 +52,7 @@ Teaching
   
 Service and leadership
 ======
+* International Co-op program Student President (2021-2022)
 * ICGC (Cincinnati, Ohio) - Teaching Arabic to students aged 8-10
 * Bearcat Ventures - First Student led VC in Ohio
 * Hyperloop UC
