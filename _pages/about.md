@@ -8,7 +8,7 @@ redirect_from:
 ---
 ![Profile Image]({{ site.author.avatar }}) <!-- This will use the avatar path from _config.yml -->
 
-I am currently a master's student in Computer Science at ETH Zurich. My interests mainly lie in the fields of NLP, Mechanistic Interpretability, Intervention Techniques for Social Science and Psycholinguistics. 
+I am currently a master's student in Computer Science at ETH Zurich. My interests mainly lie in the fields of Causality for NLP, Mechanistic Interpretability, and Psycholinguistics. 
 As of right now, I am working on projects in both Psycholinguistics and Interpretability to understand how to better model human-like Language models. These include developing cognitively plausible attention mechanisms for language models and implementing constrained decoding methods for Language Models to improve the quality of generated text.
 
 I'm actively involved in various academic and professional associations, including the ETH AI Center, RycoLab, ETH Analytics Club, and IEEE.
