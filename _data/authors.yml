@@ -2,17 +2,17 @@
 
 Name Name:
   name        : "Yahya Emara"
-  uri         : "http://name.com"
+  uri         : "https://yahya010.github.io"
   email       : "yemara@ethz.ch"
   bio         : "This is the first name."
-  avatar      : "bprofile.jpg"
+  avatar      : "profile.jpg"
   twitter     : "yemara22"
-  google_plus : "Name"
+  google_plus : "ykmemara@gmail.com"
 
-Name2 Name2:
-  name        : "Name2 Name2"
-  email       : "name2@name2.com"
-  bio         : "I ordered what?"
-  avatar      : "bio-photo.jpg"
-  twitter     : "name2"
-  google_plus : "Name"
+# Name2 Name2:
+#   name        : "Name2 Name2"
+#   email       : "name2@name2.com"
+#   bio         : "I ordered what?"
+#   avatar      : "bio-photo.jpg"
+#   twitter     : "name2"
+#   google_plus : "Name"
