@@ -8,7 +8,7 @@ redirect_from:
 ---
 
 
-I am currently a master's student in Computer Science at ETH Zurich. My interests mainly lie in the fields of decoding methods for language models, and Psycholinguistics. Working on bringing statistics back to NLP!
+I am currently a master's student in Computer Science at ETH Zurich. My interests mainly lie in the fields of controlled generation, decoding methods for language models, and psycholinguistics.
 
 I'm actively involved in various academic and professional associations, including the ETH AI Center, RycoLab, ETH Analytics Club, and IEEE.
 
