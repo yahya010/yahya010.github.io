@@ -17,4 +17,6 @@ I'm actively involved in various academic and professional associations, includi
 
 For more info
 ------
-For more detailed information, please refer to my full resume and publications page or for any questions or collaboration opportunities, don't hesitate to contact me!
+For more detailed information, please refer to my google scholar.
+
+For any questions or collaboration opportunities, don't hesitate to contact me by email!
