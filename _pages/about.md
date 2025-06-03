@@ -8,9 +8,10 @@ redirect_from:
 ---
 
 
-I am currently a master's student in Computer Science at ETH Zurich. My interests mainly lie in the fields of controlled generation, sampling and decoding methods for language models, and tokenization.
+I am currently a master's student in Computer Science at ETH Zurich. My research interests focus on probabilistic methods for language models, particularly Bayesian inference for controlled generation and more generally, inference methods for providing guarantees in language generation. I'm also interested in alternative tokenization schemes and their implications for controlled generation.
 
 I'm actively involved in various academic and professional associations, including the ETH AI Center, RycoLab, ETH Analytics Club, and IEEE.
+
 
 
 
