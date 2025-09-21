@@ -8,10 +8,9 @@ redirect_from:
 ---
 
 
-I am currently a master's student in Computer Science at ETH Zurich. My research interests focus on probabilistic methods for language models, particularly Bayesian inference for controlled generation and more generally, inference methods for providing guarantees in language generation. I'm also interested in alternative tokenization schemes and their implications for controlled generation.
+I am currently a master's student in Computer Science at ETH Zurich. My research interests are in language model probabilistic programming, and more generally, inference methods with provable guarantees. Additionally, I am interested in building practical, efficient algorithms and serving stacks to make those inference algorithms more usable.
 
-I'm actively involved in various academic and professional associations, including the ETH AI Center, RycoLab, ETH Analytics Club, and IEEE.
-
+I'm actively involved in various academic and professional associations, including GenLM, ETH AI Center, RycoLab, ETH Analytics Club, and IEEE.
 
 
 
