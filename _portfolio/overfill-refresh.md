@@ -8,6 +8,7 @@ tags:
   - llm
   - inference
   - kv-cache
+order: 1
 
 excerpt: "In this blog, we show how helpful KV cache refreshes can be for long generation from small models, along with efficient ways of finding when to refresh using inference algorithms."
 ---

@@ -9,8 +9,14 @@ redirect_from:
 
 {% include base_path %}
 
+{% assign ordered = site.portfolio | where_exp: 'p', 'p.order' | sort: 'order' %}
+{% assign unordered = site.portfolio | where_exp: 'p', 'p.order == nil' | sort: 'date' | reverse %}
 
-{% for post in site.portfolio %}
+{% for post in ordered %}
+  {% include archive-single.html %}
+{% endfor %}
+
+{% for post in unordered %}
   {% include archive-single.html %}
 {% endfor %}
 

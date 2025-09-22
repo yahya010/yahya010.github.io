@@ -1,6 +1,17 @@
+---
+title: "Collaborative Filtering Methods for Paper Recommendation Systems"
+authors:
+  - name: Yahya Emara
+tags:
+  - recommender-systems
+  - machine-learning
+excerpt: "Describing collaborative filtering methods from classical SVD to NeuMF/GraphNeuMF/DMF and an ensemble to recommend papers."
+order: 3
+---
+
 # Collaborative Filtering Methods for Paper Recommendation Systems
 
-We have a dataset of ratings that researchers have given to various papers. This data can be imagined as a large, sparse matrix where rows represent researchers, columns represent papers, and the entries are the ratings. Many entries are missing because a researcher has not rated most of the available papers.
+In out setting, we have a dataset of ratings that researchers have given to various papers. This data can be imagined as a large, sparse matrix where rows represent researchers, columns represent papers, and the entries are the ratings. Many entries are missing because a researcher has not rated most of the available papers.
 
 Our task is to predict these missing ratings. A high predicted rating for an unread paper would be a strong signal to recommend it to a researcher.
 
@@ -199,7 +210,7 @@ plt.show()
 
 
     
-![png](collaborative_filtering_files/collaborative_filtering_9_0.png)
+![png](/images/collaborative_filtering/collaborative_filtering_9_0.png)
     
 
 
@@ -257,7 +268,7 @@ print(f"Validation RMSE: {val_score:.3f}")
 
 ## Method 2: Learned embeddings
 
-Next, we will take a machine learning view of the problem. To each scientist and paper, we assign a $d$-dimensional embedding and we predict the rating that the scientist gives the paper to be their dot product. More formally, let $\vec{s}_i$ be a scientist embedding and $\vec{p}_j$ be a paper embedding. Then, we make the following rating prediction for this pair: $$\tilde{r}_{ij} = \langle \vec{s}_i, \vec{p}_j \rangle.$$ We view these embeddings as our learnable parameters and train them as we would any other model using the squared error loss function: $$\ell(\theta) = \frac{1}{2} |\langle \vec{s}_i, \vec{p}_j \rangle - r_{ij}|^2,$$ where $\theta = \{ \vec{s}_i \}_{i=1}^n \cup \{ \vec{p}_j \}_{j=1}^m$. The following is an implementation of this method.
+Next, we will take a machine learning view of the problem. To each scientist and paper, we assign a $$d$$-dimensional embedding and we predict the rating that the scientist gives the paper to be their dot product. More formally, let $$\vec{s}_i$$ be a scientist embedding and $$\vec{p}_j$$ be a paper embedding. Then, we make the following rating prediction for this pair: $$\tilde{r}_{ij} = \langle \vec{s}_i, \vec{p}_j \rangle.$$ We view these embeddings as our learnable parameters and train them as we would any other model using the squared error loss function: $$\ell(\theta) = \frac{1}{2}$$ |$$\langle \vec{s}_i, \vec{p}_j \rangle - r_{ij}^2$$| Note: $$\theta = \{ \vec{s}_i \}_{i=1}^n \cup \{ \vec{p}_j \}_{j=1}^m$$. The following is an implementation of this method.
 
 
 ```python
@@ -310,7 +321,7 @@ valid_loader = torch.utils.data.DataLoader(valid_dataset, batch_size=64, shuffle
 
 ```
 
-We train the model for $5$ epochs over researcher–paper batches, minimizing MSE and updating parameters via backpropagation, but the training loss isn’t improving substantially.
+We train the model for $$5$$ epochs over researcher–paper batches, minimizing MSE and updating parameters via backpropagation, but the training loss isn’t improving substantially.
 
 We’ll need to explore other more advanced techniques to boost performance.  
 
@@ -413,7 +424,7 @@ def iterative_svd(df, k=2, max_iterations=10, tolerance=0.001):
 
 ```
 
-We choose $k=2$ to capture the two most significant latent factors, set `max_iterations=200` for sufficient refinement, and use a tolerance of $10^{-4}$ to ensure stable convergence.  
+We choose $$k=2$$ to capture the two most significant latent factors, set `max_iterations=200` for sufficient refinement, and use a tolerance of $$10^{-4}$$ to ensure stable convergence.  
 
 
 
@@ -639,13 +650,13 @@ The validation performance is just enough to pass the simple baseline, so we wil
 
 ## Method 4: SVD++
 
-We extend basic matrix factorization by adding user/item biases and modeling implicit feedback. Each researcher $r$ and paper $p$ has embeddings $\mathbf{p}_r,\mathbf{q}_p\in\mathbb{R}^d$, biases $b_r,b_p\in\mathbb{R}$, and implicit-feedback embeddings $\{y_j\}$. We predict
+We extend basic matrix factorization by adding user/item biases and modeling implicit feedback. Each researcher $$r$$ and paper $$p$$ has embeddings $$\mathbf{p}_r,\mathbf{q}_p\in\mathbb{R}^d$$, biases $$b_r,b_p\in\mathbb{R}$$, and implicit-feedback embeddings $$\{y_j\}$$. We predict
 
 $$
 \hat r_{rp} = \mu + b_r + b_p + \mathbf{q}_p^T\Bigl(\mathbf{p}_r + \frac{1}{\sqrt{|\mathcal{N}(r)|}}\sum_{j\in\mathcal{N}(r)} y_j\Bigr),
 $$
 
-where $\mu$ is the global mean and $\mathcal{N}(r)$ is the set of papers researcher $r$ has interacted with. We train all parameters by minimizing the squared error loss
+where $$\mu$$ is the global mean and $$\mathcal{N}(r)$$ is the set of papers researcher $$r$$ has interacted with. We train all parameters by minimizing the squared error loss
 
 $$
 \ell(\theta) = \frac12\bigl(\hat r_{rp} - r_{rp}\bigr)^2.
@@ -680,9 +691,9 @@ class SVDPP(nn.Module):
         return self.global_mean + b_u + b_i + dot
 ```
 
-We instantiate the SVD++ model for $10\,000$ researchers and $1\,000$ papers, each represented in a $16$-dimensional embedding space to capture diverse latent factors.
+We instantiate the SVD++ model for $$10\,000$$ researchers and $$1\,000$$ papers, each represented in a $$16$$-dimensional embedding space to capture diverse latent factors.
 
-The Adam optimizer is configured with a learning rate of $10^{-3}$ and an L2 weight decay of $10^{-4}$ to balance rapid learning with regularization.
+The Adam optimizer is configured with a learning rate of $$10^{-3}$$ and an L2 weight decay of $$10^{-4}$$ to balance rapid learning with regularization.
 
 A ReduceLROnPlateau scheduler monitors the validation loss and, if it does not improve for one epoch, halves the learning rate to allow finer-grained updates and more stable convergence.
 
@@ -866,14 +877,14 @@ def get_dataset(
 
 ## Method 5: Neural Matrix Factorization (NeuMF)
 
-We build a hybrid model that learns both linear and nonlinear interactions and jointly predicts ratings and wishlist preferences. NeuMF combines a GMF branch (element-wise product of embeddings) with an MLP branch (deep concatenation of embeddings), fuses them via a learned weight $\alpha$, and uses separate output heads for rating and wishlist signals.
+We build a hybrid model that learns both linear and nonlinear interactions and jointly predicts ratings and wishlist preferences. NeuMF combines a GMF branch (element-wise product of embeddings) with an MLP branch (deep concatenation of embeddings), fuses them via a learned weight $$\alpha$$, and uses separate output heads for rating and wishlist signals.
 
 ---
 
 **Detailed Architecture**
 
 - **Input embeddings**  
-  Each researcher $r$ and paper $p$ has a $d$-dimensional embedding $\mathbf{u}_r,\mathbf{v}_p\in\mathbb{R}^d$.
+  Each researcher $$r$$ and paper $$p$$ has a $$d$$-dimensional embedding $$\mathbf{u}_r,\mathbf{v}_p\in\mathbb{R}^d$$.
 
 - **GMF branch**  
   $$g = \mathbf{u}_r \odot \mathbf{v}_p$$
@@ -884,7 +895,7 @@ We build a hybrid model that learns both linear and nonlinear interactions and j
   x^{(1)} = [\mathbf{u}_r, \mathbf{v}_p],\quad
   x^{(\ell+1)} = \mathrm{GELU}(W^{(\ell)} x^{(\ell)} + b^{(\ell)}),\;\ell=1,\dots,L
   $$
-  yielding $m = x^{(L+1)}$.
+  yielding $$m = x^{(L+1)}$$.
 
 - **Fusion**  
   $$f = [\,\alpha\,g,\;(1-\alpha)\,m\,],\quad \alpha\in[0,1]\ \text{learned}$$
@@ -892,7 +903,7 @@ We build a hybrid model that learns both linear and nonlinear interactions and j
 - **Output heads**  
   - **Rating**:  
     $$\hat r = 1 + 4\;\sigma\bigl(W_r\,f + b_r\bigr),$$  
-    constraining $\hat r\in[1,5]$.  
+    constraining $$\hat r\in[1,5]$$.  
   - **Wishlist**:  
     $$\hat w = \sigma\bigl(W_w\,f + b_w\bigr),\quad \hat w\in[0,1].$$
 
@@ -901,7 +912,7 @@ We build a hybrid model that learns both linear and nonlinear interactions and j
   $$
   \ell = \frac{1}{2}\|\hat r - r\|^2_{\!(w=0)} \;+\;\lambda\,\|\hat w - w\|^2,
   $$  
-  where $\|\cdot\|_{(w=0)}$ masks out entries with $w=1$, and $\lambda$ is the wishlist weight.
+  where $$\|\cdot\|_{(w=0)}$$ masks out entries with $$w=1$$, and $$\lambda$$ is the wishlist weight.
 
 This design lets NeuMF capture both simple latent-factor signals and high-order nonlinear interactions, simultaneously optimizing for two complementary tasks.  
 
@@ -976,9 +987,9 @@ train_loader = torch.utils.data.DataLoader(train_dataset, batch_size=64, shuffle
 valid_loader = torch.utils.data.DataLoader(valid_dataset, batch_size=64, shuffle=False)
 ```
 
-We configure the NeuMF model with $10,000$ researchers and $1,000$ papers, embedding each into a $16$-dimensional latent space and using two MLP hidden layers of size $32$.  
+We configure the NeuMF model with $$10,000$$ researchers and $$1,000$$ papers, embedding each into a $$16$$-dimensional latent space and using two MLP hidden layers of size $$32$$.  
 
-The wishlist loss is weighted by $2.0$, and training runs for $40$ epochs with batch size $64$, using AdamW at learning rate $5\times10^{-3}$ and L2 regularization; a ReduceLROnPlateau scheduler halves the learning rate if validation loss does not improve for one epoch.  
+The wishlist loss is weighted by $$2.0$$, and training runs for $$40$$ epochs with batch size $$64$$, using AdamW at learning rate $$5\times10^{-3}$$ and L2 regularization; a ReduceLROnPlateau scheduler halves the learning rate if validation loss does not improve for one epoch.  
 
 
 ```python
@@ -996,7 +1007,7 @@ optimizer = torch.optim.AdamW(model_neumf.parameters(), lr=LEARNING_RATE)
 scheduler = torch.optim.lr_scheduler.ReduceLROnPlateau(optimizer, mode='min', factor=0.5, patience=1)
 ```
 
-The NeuMF training loop mirrors the SVD++ procedure: over $40$ epochs we perform forward/backward passes with AdamW on each batch’s ratings and wishlist flags, then compute validation RMSE (clamping ratings to $[1,5]$) and step the ReduceLROnPlateau scheduler.  
+The NeuMF training loop mirrors the SVD++ procedure: over $$40$$ epochs we perform forward/backward passes with AdamW on each batch’s ratings and wishlist flags, then compute validation RMSE (clamping ratings to $$[1,5]$$) and step the ReduceLROnPlateau scheduler.  
 
 
 
@@ -1110,7 +1121,7 @@ print(f"Validation RMSE: {val_score:.3f}")
 
 The NeuMF model outperformed our previous baselines—marking the first time we beat the hard benchmark—with surprisingly strong validation results.
 
-Achieving this required extensive tuning: we set the wishlist loss weight to $2.0$ (since MSE is less severe than binary cross-entropy, allowing a coefficient higher than 1), kept embedding and hidden layer sizes modest to prevent overfitting, and applied a relatively high weight decay $\lambda$ for regularization. Too large a decay would prevent the model from learning (training loss wouldn’t decrease), so this configuration yielded the best overall performance.  
+Achieving this required extensive tuning: we set the wishlist loss weight to $$2.0$$ (since MSE is less severe than binary cross-entropy, allowing a coefficient higher than 1), kept embedding and hidden layer sizes modest to prevent overfitting, and applied a relatively high weight decay $$\lambda$$ for regularization. Too large a decay would prevent the model from learning (training loss wouldn’t decrease), so this configuration yielded the best overall performance.  
 
 
 ## Method 6: Graph-Augmented NeuMF (GraphNeuMF)
@@ -1262,9 +1273,9 @@ train_loader = torch.utils.data.DataLoader(train_dataset, batch_size=BATCH_SIZE,
 valid_loader = torch.utils.data.DataLoader(valid_dataset, batch_size=BATCH_SIZE, shuffle=False)
 ```
 
-We configure GraphNeuMF with $10,000$ researchers and $1,000$ papers, embedding each into a $16$-dimensional space and using two MLP hidden layers of size 32.
+We configure GraphNeuMF with $$10,000$$ researchers and $$1,000$$ papers, embedding each into a $$16$$-dimensional space and using two MLP hidden layers of size 32.
 
-The wishlist loss weight is set to 2.0 (as with NeuMf where we have fined-tunned this hyperparameter), batch size to 64, and learning rate to $10^{-3}$.
+The wishlist loss weight is set to 2.0 (as with NeuMf where we have fined-tunned this hyperparameter), batch size to 64, and learning rate to $$10^{-3}$$.
 
 Before joint training, we precompute and set the LightGCN adjacency (`edge_index`) to enable efficient graph convolutions.  
 
@@ -1291,7 +1302,7 @@ model_graphneumf = GraphNeuMF(
 model_graphneumf.lightgcn.set_adj(edge_index, device)
 ```
 
-We pretrain the LightGCN layers for $5$ epochs using a BPR-style loss that encourages higher scores for observed researcher–paper edges than for randomly sampled negatives. This step refines the graph-based embeddings before they are fused into the GraphNeuMF model.  
+We pretrain the LightGCN layers for $$5$$ epochs using a BPR-style loss that encourages higher scores for observed researcher–paper edges than for randomly sampled negatives. This step refines the graph-based embeddings before they are fused into the GraphNeuMF model.  
 
 
 ```python
@@ -1327,7 +1338,7 @@ for epoch in range(GCN_PRETRAIN_EPOCHS):
      Pre-train Epoch 5/5  Loss=0.6931
 
 
-The GraphNeuMF training loop is almost identical to NeuMF’s: over $40$ epochs we batch researcher–paper pairs (and wishlist flags), compute the combined rating and wishlist loss, backpropagate with AdamW, and step a ReduceLROnPlateau scheduler based on validation RMSE.  
+The GraphNeuMF training loop is almost identical to NeuMF’s: over $$40$$ epochs we batch researcher–paper pairs (and wishlist flags), compute the combined rating and wishlist loss, backpropagate with AdamW, and step a ReduceLROnPlateau scheduler based on validation RMSE.  
 
 This end-to-end training fine-tunes both the graph-based embeddings and the hybrid NeuMF components together, yielding the final GraphNeuMF model.  
 
@@ -1442,7 +1453,7 @@ print(f"Validation RMSE: {val_score:.3f}")
     Validation RMSE: 0.853
 
 
-Although GraphNeuMF did not improve on the validation RMSE of $0.848$ achieved by NeuMF alone, its longer training schedule limited our ability to fine-tune its hyperparameters.
+Although GraphNeuMF did not improve on the validation RMSE of $$0.848$$ achieved by NeuMF alone, its longer training schedule limited our ability to fine-tune its hyperparameters.
 
 We anticipate that GraphNeuMF explores complementary regions of the embedding space compared to NeuMF, making their combination in a future ensemble potentially more powerful.  
 
@@ -1455,16 +1466,16 @@ Specifically, let
 $$
 \mathbf{e}_r \in \mathbb{R}^d,\quad \mathbf{e}_p \in \mathbb{R}^d
 $$  
-be the researcher and paper embeddings.  We apply $L$ layers of transformations:  
+be the researcher and paper embeddings.  We apply $$L$$ layers of transformations:  
 $$
 \mathbf{u} = f_r(\mathbf{e}_r),\quad
 \mathbf{v} = f_p(\mathbf{e}_p),
 $$  
-where each $f(\cdot)$ is a sequence of linear + GELU blocks.  The predicted rating is  
+where each $$f(\cdot)$$ is a sequence of linear + GELU blocks.  The predicted rating is  
 $$
 \hat r_{rp} = \mathbf{u}^\top \mathbf{v} \;+\; b_r \;+\; b_p \;+\; \beta,
 $$  
-with researcher bias $b_r$, paper bias $b_p$, and global bias $\beta$.  Implicit feedback is modeled via a BPR loss on wishlist logits, and the overall objective combines MSE on observed ratings with weighted BPR plus embedding regularization:  
+with researcher bias $$b_r$$, paper bias $$b_p$$, and global bias $$\beta$$.  Implicit feedback is modeled via a BPR loss on wishlist logits, and the overall objective combines MSE on observed ratings with weighted BPR plus embedding regularization:  
 $$
 \mathcal{L} = \mathrm{MSE}(\hat r, r) \;+\;\lambda_\text{wish}\,\mathrm{BPR}(\ell^+, \ell^-) \;+\;\lambda_\text{emb}\|\mathbf{e}\|_2^2.
 $$  
@@ -1570,9 +1581,9 @@ train_loader = torch.utils.data.DataLoader(train_dataset, batch_size=64, shuffle
 valid_loader = torch.utils.data.DataLoader(valid_dataset, batch_size=64, shuffle=False)
 ```
 
-We initialize DMF for $10{,}000$ researchers and $1{,}000$ papers with tower layer sizes $[32,64,128]$, embedding dimension $32$ (which is the first tower dim), and a wishlist weight of $0.5$.
+We initialize DMF for $$10{,}000$$ researchers and $$1{,}000$$ papers with tower layer sizes $$[32,64,128]$$, embedding dimension $$32$$ (which is the first tower dim), and a wishlist weight of $$0.5$$.
 
-The AdamW optimizer uses a learning rate of $10^{-3}$, weight decay of $10^{-3}$, and embedding regularization $\lambda_{\text{emb}}=10^{-4}$.
+The AdamW optimizer uses a learning rate of $$10^{-3}$$, weight decay of $$10^{-3}$$, and embedding regularization $$\lambda_{\text{emb}}=10^{-4}$$.
 
 A ReduceLROnPlateau scheduler halves the learning rate if validation RMSE does not improve for one epoch.  
 
@@ -1707,9 +1718,9 @@ print(f"Validation RMSE: {val_score:.3f}")
     Validation RMSE: 0.847
 
 
-The DMF model reaches validation RMSE comparable to NeuMF but trains much faster, making it well-suited for quick experimentation. We switched to a combined MSE + BPR objective—$\ell_{\text{BPR}} = -\log\sigma(s^+ - s^-)$—to better leverage implicit wishlist signals, and added a global bias term $\beta$ to center our predictions.
+The DMF model reaches validation RMSE comparable to NeuMF but trains much faster, making it well-suited for quick experimentation. We switched to a combined MSE + BPR objective—$$\ell_{\text{BPR}} = -\log\sigma(s^+ - s^-)$$—to better leverage implicit wishlist signals, and added a global bias term $$\beta$$ to center our predictions.
 
-To prevent overfitting, we increased the embedding regularization to $\lambda_{\text{emb}}=10^{-4}$ and applied a weight decay of $10^{-3}$ across all parameters. The deep tower architecture ([32, 64, 128]) provides greater representational power, while these regularization settings ensure the model generalizes effectively.
+To prevent overfitting, we increased the embedding regularization to $$\lambda_{\text{emb}}=10^{-4}$$ and applied a weight decay of $$10^{-3}$$ across all parameters. The deep tower architecture ([32, 64, 128]) provides greater representational power, while these regularization settings ensure the model generalizes effectively.
 
 All the hyperparameters were greatly fined-tuned for the best performance!
 
@@ -1808,7 +1819,7 @@ $$
 then standardize each feature to zero mean and unit variance.
 
 
-A small DeepStacking neural network maps $$\mathbf{x}'_i\mapsto\hat r_i$$ through one hidden layer of size $4\times dim$ and a final output neuron, training to minimize  
+A small DeepStacking neural network maps $$\mathbf{x}'_i\mapsto\hat r_i$$ through one hidden layer of size $$4\times dim$$ and a final output neuron, training to minimize  
 $$
 \mathcal{L} = \frac{1}{N}\sum_{i=1}^N\bigl(\hat r_i - r_i\bigr)^2.
 $$  
@@ -2039,20 +2050,7 @@ print(f"Best Top-{best_k} Ensemble RMSE: {best_rmse:.6f}")
     Best Top-3 Ensemble RMSE: 0.835264
 
 
-We found that the optimal ensemble uses the top $k=3$ models with inverse‐RMSE weights, so we compute the blended predictions accordingly and call `make_submission(ensemble_pred_fn, "ensemble_submission.csv")` to generate the final submission.  
-
-
-```python
-_, _, best_weights, best_names = top_k_ensemble(best_k)
-
-def ensemble_pred_fn(sids: np.ndarray, pids: np.ndarray) -> np.ndarray:
-    blended = np.zeros_like(sids, dtype=float)
-    for name in best_names:
-        blended += best_weights[name] * prediction_functions[name](sids, pids)
-    return blended
-
-make_submission(ensemble_pred_fn, "ensemble_submission.csv")
-```
+We found that the optimal ensemble uses the top $$k=3$$ models with inverse‐RMSE weights, so we compute the blended predictions accordingly.
 
     Selected top 3 models: DMF, NeuMF, GraphNeuMF
       DMF weight: 0.3340
