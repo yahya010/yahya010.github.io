@@ -41,8 +41,8 @@ The baseline OverFill algorithm used can be found in the github [repository](htt
 
 **Decode:** Generate one token at a time using the KV cache. Each step reads the cached K/V (prompt + past outputs), computes attention only for the new position, and appends the new token's K/V to the cache.
 
-![png](/images/overfill_refresh/prefill_refresh_1.png)
-![png](/images/overfill_refresh/prefill_refresh_2.png)
+![png](/images/overfill-refresh/prefill_refresh_1.png)
+![png](/images/overfill-refresh/prefill_refresh_2.png)
 
 OverFill's idea: prefill with a high-quality teacher model to get a strong initial cache, then decode with a fast student model that reuses and extends that cache.
 
@@ -600,13 +600,13 @@ print("\nSaved: mc_dropout_time_series.csv, mc_dropout_phase_summary.csv")
 
 
     
-![png](/images/overfill_refresh/overfill_refresh_10_1.png)
+![png](/images/overfill-refresh/overfill_refresh_10_1.png)
     
 
 
 
     
-![png](/images/overfill_refresh/overfill_refresh_10_2.png)
+![png](/images/overfill-refresh/overfill_refresh_10_2.png)
     
 
 

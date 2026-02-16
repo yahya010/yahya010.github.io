@@ -14,14 +14,14 @@ name                     : &name "Yahya Emara"
 description              : &description "personal description"
 url                      : https://yahya010.github.io # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
-repository               : "yahya010/yahya010.github.io"
+repository               : "yahya010/yahya010.github.io" # set to "" for local preview without GitHub token
 
 # Site Author - The following control what appear as part of the author content on the side bar.
 #               If a field is blank the icon and link will not appear, otherwise it will be shown.
 #               Additional customization can be done by editing /_includes/author-profile.html
 author:
   # Biographic information
-  avatar           : "mainpic.jpg" #"profile_ist.jpeg" #"profile.png"
+  avatar           : "mainpic.jpg"
   name             : "Yahya Emara"
   pronouns         : # example: "she/her"  
   bio              : "Msc at ETH Zürich"
