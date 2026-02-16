@@ -1,17 +1,67 @@
 /* ==========================================================================
+   Theme custom properties (light/dark mode)
+   ========================================================================== */
+
+:root {
+  --bg-color: #{$background-color};
+  --text-color: #{$text-color};
+  --link-color: #{$link-color};
+  --link-color-hover: #{$link-color-hover};
+  --border-color: #{$border-color};
+  --code-bg: #{$code-background-color};
+  --code-border: #{$lighter-gray};
+  --masthead-bg: #fff;
+  --masthead-link-color: #{$masthead-link-color};
+  --masthead-link-color-hover: #{$masthead-link-color-hover};
+  --footer-bg: #{$lighter-gray};
+  --footer-border: #{$light-gray};
+  --footer-text: #{mix(#fff, $gray, 25%)};
+  --surface-color: #fff;
+  --primary-color: #{$primary-color};
+  --lighter-gray: #{$lighter-gray};
+  --light-gray: #{$light-gray};
+}
+
+[data-theme="dark"] {
+  --bg-color: #16161d;
+  --text-color: #d4d4d8;
+  --link-color: #7cc5d9;
+  --link-color-hover: #a3dae8;
+  --border-color: #2e2e38;
+  --code-bg: #1e1e28;
+  --code-border: #2e2e38;
+  --masthead-bg: #1c1c26;
+  --masthead-link-color: #a1a1aa;
+  --masthead-link-color-hover: #d4d4d8;
+  --footer-bg: #1c1c26;
+  --footer-border: #2e2e38;
+  --footer-text: #a1a1aa;
+  --surface-color: #1c1c26;
+  --primary-color: #a1a1aa;
+  --lighter-gray: #2e2e38;
+  --light-gray: #3f3f50;
+}
+
+/* ==========================================================================
    BASE ELEMENTS
    ========================================================================== */
 html {
   /* sticky footer fix */
   position: relative;
   min-height: 100%;
+
+  &[data-theme] {
+    background-color: var(--bg-color);
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
 }
 
 body {
   margin: 0;
   padding: $masthead-height 0 0;
   padding-bottom: 9em;
-  color: $text-color;
+  color: var(--text-color);
+  background-color: var(--bg-color);
   font-family: $global-font-family;
   line-height: 1.5;
 
@@ -64,7 +114,7 @@ p {
 u,
 ins {
   text-decoration: none;
-  border-bottom: 1px solid $text-color;
+  border-bottom: 1px solid var(--text-color);
   a {
     color: inherit;
   }
@@ -87,7 +137,7 @@ abbr[title],
 abbr[data-original-title] {
   text-decoration: none;
   cursor: help;
-  border-bottom: 1px dotted $text-color;
+  border-bottom: 1px dotted var(--text-color);
 }
 
 /* blockquotes */
@@ -97,7 +147,7 @@ blockquote {
   padding-left: 1em;
   padding-right: 1em;
   font-style: italic;
-  border-left: 0.25em solid $primary-color;
+  border-left: 0.25em solid var(--primary-color);
 
   cite {
     font-style: italic;
@@ -140,8 +190,8 @@ td > code {
   padding-top: 0.1rem;
   padding-bottom: 0.1rem;
   font-size: $type-size-6;
-  background: $code-background-color;
-  border: 1px solid $lighter-gray;
+  background: var(--code-bg);
+  border: 1px solid var(--code-border);
   border-radius: $border-radius;
   box-shadow: $box-shadow;
 
@@ -157,7 +207,7 @@ hr {
   display: block;
   margin: 1em 0;
   border: 0;
-  border-top: 1px solid $border-color;
+  border-top: 1px solid var(--border-color);
 }
 
 /* lists */
@@ -243,7 +293,7 @@ figcaption {
   a {
     color: inherit;
     text-decoration: none;
-    border-bottom: 1px solid $light-gray;
+    border-bottom: 1px solid var(--light-gray);
     -webkit-transition: $global-transition;
     transition: $global-transition;
 
