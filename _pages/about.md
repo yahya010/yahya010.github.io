@@ -12,4 +12,4 @@ I am currently a master's student in Computer Science at ETH Zurich. My research
 
 I'm actively involved in various academic and professional associations, including GenLM, ETH AI Center, RycoLab, ETH Analytics Club, and IEEE.
 
-For any questions or collaboration opportunities, don't hesitate to contact me at ykmemara [at] gmail [dot] com
+Contact me at: ykmemara [at] gmail [dot] com
