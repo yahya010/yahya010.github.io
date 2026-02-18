@@ -24,7 +24,7 @@ author:
   avatar           : "mainpic.jpg"
   name             : "Yahya Emara"
   pronouns         : # example: "she/her"  
-  bio              : "Msc at ETH Zürich"
+  bio              : "Research Engineer at Makora, Msc at ETH Zürich"
   location         : "Zürich, Switzerland"
   employer         : "ETH Zürich"
   uri              : # URL
@@ -105,7 +105,7 @@ staticman:
       options:
         format           : "iso8601" # "iso8601" (default), "timestamp-seconds", "timestamp-milliseconds"
 atom_feed:
-  hide                   : false     # change to true to hide the RSS feed in the footer
+  hide                   : true
   path                   : # blank (default) uses feed.xml
 
 
