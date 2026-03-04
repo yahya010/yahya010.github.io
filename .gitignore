@@ -13,3 +13,6 @@ package-lock.json
 
 # Ignore bundled Ruby gems
 vendor/
+
+# Claude Code
+.claude/
